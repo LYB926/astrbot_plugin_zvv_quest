@@ -1,0 +1,16 @@
+{
+  "default_count": {
+    "description": "默认返回表情包数量",
+    "type": "int",
+    "hint": "未在 /zvv <描述> [数量] 中指定数量时使用；范围为 1 至 50。",
+    "obvious_hint": true,
+    "default": 3
+  },
+  "max_count": {
+    "description": "最大返回表情包数量",
+    "type": "int",
+    "hint": "限制单次查询数量，范围为 1 至 50。不宜设置过大，建议不超过 10，以免增加下载内存占用及合并转发失败概率。",
+    "obvious_hint": true,
+    "default": 10
+  }
+}

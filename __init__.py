@@ -1,0 +1,1 @@
+"""ZVVQuest AstrBot plugin package."""

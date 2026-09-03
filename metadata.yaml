@@ -1,0 +1,8 @@
+name: astrbot_plugin_zvv_quest
+display_name: ZVVQuest 张维为表情包
+short_desc: 通过 /zvv 查询张维为表情包。
+desc: 调用公开的 ZVVQuest 只读搜索接口，支持多图合并转发。
+version: v1.0.0
+author: LYB926
+repo: https://github.com/LYB926/astrbot_plugin_zvv_quest
+astrbot_version: ">=4.26,<5"
