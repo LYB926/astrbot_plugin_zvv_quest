@@ -18,8 +18,15 @@ class Logger:
         self.warnings.append(args)
 
 
-def test_extracts_command_tail() -> None:
-    assert extract_command_tail("  /zvv   我们的   网民  5 ") == "我们的 网民 5"
+@pytest.mark.parametrize(
+    "message",
+    [
+        "  /zvv   我们的   网民  5 ",
+        "  zvv   我们的   网民  5 ",
+    ],
+)
+def test_extracts_command_tail_from_raw_and_astrbot_messages(message: str) -> None:
+    assert extract_command_tail(message) == "我们的 网民 5"
 
 
 @pytest.mark.parametrize(

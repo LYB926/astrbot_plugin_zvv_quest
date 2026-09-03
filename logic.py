@@ -41,14 +41,13 @@ class SearchRequest:
 
 
 def extract_command_tail(message: str, command: str = "zvv") -> str:
-    """Return normalized text after a command token from AstrBot's message text."""
+    """Return normalized text after either AstrBot or raw command text."""
 
     normalized = re.sub(r"\s+", " ", message).strip()
-    command_token = f"/{command}"
-    index = normalized.find(command_token)
-    if index < 0:
+    match = re.match(rf"^/?{re.escape(command)}(?:\s+|$)", normalized)
+    if match is None:
         return ""
-    return normalized[index + len(command_token) :].strip()
+    return normalized[match.end() :].strip()
 
 
 def parse_search_request(tail: str, default_count: int, max_count: int) -> SearchRequest:
